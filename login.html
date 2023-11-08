@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Template Bootstrap</title>
+    <!-- Inclua a biblioteca Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .navbar-light .navbar-nav .nav-link,
+        .navbar-light .navbar-brand {
+            color: white;
+            text-decoration: none; /* Remove o sublinhado padrão */
+            font-weight: lighter; /* Deixa as letras mais finas */
+            transition: color 0.3s; /* Adiciona uma transição suave para a cor */
+            position: relative; /* Adiciona posicionamento relativo para o pseudo-elemento */
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover::before,
+        .navbar-light .navbar-brand:hover::before {
+            visibility: visible; /* Torna a linha visível no hover */
+        }
+
+        .navbar-light .navbar-nav .nav-link::before,
+        .navbar-light .navbar-brand::before {
+            content: ""; /* Adiciona conteúdo vazio para o pseudo-elemento */
+            position: absolute; /* Define o posicionamento absoluto */
+            width: 100%; /* Define a largura como 100% do elemento pai */
+            height: 1px; /* Define a altura da linha */
+            bottom: -3px; /* Move a linha para abaixo do texto */
+            background-color: white; /* Define a cor da linha */
+            visibility: hidden; /* Torna a linha invisível inicialmente */
+            transition: all 0.3s ease; /* Adiciona transição para a linha */
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            color: black;
+        }
+
+        .bg-dark.text-white {
+            background-color: black;
+            color: white;
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            width: 1200px;
+            height: 400px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Logotipo -->
+    <div class="cabecalho container text-center mt-3 ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="white" class="bi bi-stars" viewBox="0 0 16 16">
+            <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z" />
+        </svg>
+        <h2>Beauty Store</h2>
+    </div>
+
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: black;">
+        <div class="container">
+            <a class="navbar-brand" href="#">Meu Site</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro-produto.html">Cadastrar Produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Entrar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main > 
+
+      <section class="container py-4"> 
+    
+        <div class="row justify-content-center" > 
+    
+          <div class="col-md-6"> 
+    
+            <h2>Entrar</h2> 
+    
+            <!-- Formulário de entrada --> 
+    
+            <form> 
+    
+              <div class="form-group"> 
+    
+                <label for="username">Nome de Usuário:</label> 
+    
+                <input type="text" class="form-control" id="username"> 
+    
+              </div> 
+    
+              <div class="form-group"> 
+    
+                <label for="password">Senha:</label> 
+    
+                <input type="password" class="form-control" id="password"> 
+    
+              </div> 
+    
+              <button type="submit" class="btn btn-primary">Entrar</button> 
+    
+            </form> 
+    
+          </div> 
+    
+        </div> 
+    
+      </section> 
+    
+    </main> 
+    
+     
+
+    <!-- Cabeçalho -->
+    <div class="container mt-5">
+        <h2 class="text-center">Bem-vindo ao Nosso Site!</h2>
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget est eu
+            lectus placerat congue non a elit.</p>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container text-center">
+          <p>Siga-nos nas redes sociais:</p>
+          <a href="https://www.facebook.com/" class="text-white mx-2">
+              <i class="fab fa-facebook-f fa-2x"></i>
+          </a>
+          <a href="https://www.instagram.com/" class="text-white mx-2">
+              <i class="fab fa-instagram fa-2x"></i>
+          </a>
+          <a href="https://twitter.com/" class="text-white mx-2">
+              <i class="fab fa-twitter fa-2x"></i>
+          </a>
+      </div>
+  </footer>
+
+    <!-- Inclua a biblioteca Bootstrap JS e o jQuery para funcionalidades adicionais -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+</body>
+
+</html>
