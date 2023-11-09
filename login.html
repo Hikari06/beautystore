@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Template Bootstrap</title>
+    <title>Beauty Store</title>
     <!-- Inclua a biblioteca Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
@@ -93,49 +93,43 @@
         </div>
     </nav>
 
-    <main > 
-
-      <section class="container py-4"> 
+    <h1>Cadastro de Usuário</h1>
+    <form id="cadastroUsuario">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required><br><br>
     
-        <div class="row justify-content-center" > 
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" required><br><br>
     
-          <div class="col-md-6"> 
+      <input type="submit" value="Cadastrar Usuário">
+    </form>
     
-            <h2>Entrar</h2> 
+    <hr>
+   
     
-            <!-- Formulário de entrada --> 
+    <script>
+      document.getElementById("cadastroUsuario").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        fetch('http://localhost:3000/cadastrousuario', {
+          method: 'POST',
+          body: formData
+        }).then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error('Erro:', error));
+      });
     
-            <form> 
-    
-              <div class="form-group"> 
-    
-                <label for="username">Nome de Usuário:</label> 
-    
-                <input type="text" class="form-control" id="username"> 
-    
-              </div> 
-    
-              <div class="form-group"> 
-    
-                <label for="password">Senha:</label> 
-    
-                <input type="password" class="form-control" id="password"> 
-    
-              </div> 
-    
-              <button type="submit" class="btn btn-primary">Entrar</button> 
-    
-            </form> 
-    
-          </div> 
-    
-        </div> 
-    
-      </section> 
-    
-    </main> 
-    
-     
+      document.getElementById("cadastroProduto").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        fetch('http://localhost:3000/cadastroprodutobeleza', {
+          method: 'POST',
+          body: formData
+        }).then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error('Erro:', error));
+      });
+    </script>
 
     <!-- Cabeçalho -->
     <div class="container mt-5">
@@ -163,7 +157,7 @@
     <!-- Inclua a biblioteca Bootstrap JS e o jQuery para funcionalidades adicionais -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
 </body>

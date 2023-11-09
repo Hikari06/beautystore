@@ -84,7 +84,7 @@ app.post("/cadastroprodutobeleza", async(req, res)=>{
  
     try{
         const newProdutobeleza = await produtobeleza.save();
-        res.json({error : null, msg : "Cadastro ok", usuarioId : newProdutobeleza._id});
+        res.json({error : null, msg : "Cadastro ok", id_produtobeleza : newProdutobeleza._id});
     } catch(error){
         res.status(400).json({error});
     }
